@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class TaxCategory {
+
+	private Collection<TaxRate> taxRate;
+	private String category;
+	private TaxRate taxRates;
+	private Item items;
+
+	public TaxCategory() {
+		// TODO - implement TaxCategory.TaxCategory
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @param date
+	 */
+	public BigDecimal getTaxRateforDate(localDate date) {
+		// TODO - implement TaxCategory.getTaxRateforDate
+		throw new UnsupportedOperationException();
+	}
+
+	public void operation() {
+		// TODO - implement TaxCategory.operation
+		throw new UnsupportedOperationException();
+	}
+
+}
