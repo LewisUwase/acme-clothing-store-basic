@@ -1,95 +1,92 @@
-import java.util.*;
+package storefront;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Store {
 
-	private Admin managedStore;
-	private Collection<Item> storeItems;
-	private Collection<TaxCategory> category;
-	private Promo activepromo;
-	private int storeID;
-	private String address;
-	private int zipCode;
-	private localDate operatingHours;
-	private String storeName;
-	private Item items;
-	private TaxCategory taxCategories;
-	private Promo promo;
+    private int storeID;
+    private String storeName;
+    private String address;
+    private int zipCode;
+    private LocalDate operatingHours; // Optional; might later represent open/close times
+    private List<Item> storeItems;
+    private List<TaxCategory> taxCategories;
+    private Promo activePromo;
+    private Admin managedStore;
 
-	public Store() {
-		// TODO - implement Store.Store
-		throw new UnsupportedOperationException();
-	}
+    public Store(int storeID, String storeName, String address, int zipCode) {
+        this.storeID = storeID;
+        this.storeName = storeName;
+        this.address = address;
+        this.zipCode = zipCode;
+        this.storeItems = new ArrayList<>();
+        this.taxCategories = new ArrayList<>();
+    }
 
-	/**
-	 * 
-	 * @param item
-	 */
-	public void addItem(Item item) {
-		// TODO - implement Store.addItem
-		throw new UnsupportedOperationException();
-	}
+    // Add a new item to the store
+    public void addItem(Item item) {
+        if (item != null && !storeItems.contains(item)) {
+            storeItems.add(item);
+        }
+    }
 
-	/**
-	 * 
-	 * @param number
-	 */
-	public void findItemByNumber(int number) {
-		// TODO - implement Store.findItemByNumber
-		throw new UnsupportedOperationException();
-	}
+    // Remove an item from the store
+    public void removeItem(Item item) {
+        storeItems.remove(item);
+    }
 
-	/**
-	 * 
-	 * @param category
-	 */
-	public TaxCategory findItemByTaxCategory(String category) {
-		// TODO - implement Store.findItemByTaxCategory
-		throw new UnsupportedOperationException();
-	}
+    // Find item by name
+    public Item findItemByName(String name) {
+        for (Item item : storeItems) {
+            if (item.getName().equalsIgnoreCase(name)) {
+                return item;
+            }
+        }
+        return null;
+    }
 
-	/**
-	 * 
-	 * @param taxCategory
-	 */
-	public void addTaxCategory(TaxCategory taxCategory) {
-		// TODO - implement Store.addTaxCategory
-		throw new UnsupportedOperationException();
-	}
+    // Find item by price range
+    public List<Item> findItemsByPriceRange(double min, double max) {
+        List<Item> result = new ArrayList<>();
+        for (Item item : storeItems) {
+            if (item.getPrice() >= min && item.getPrice() <= max) {
+                result.add(item);
+            }
+        }
+        return result;
+    }
 
-	/**
-	 * 
-	 * @param taxCategory
-	 */
-	public void removeTaxCategory(TaxCategory taxCategory) {
-		// TODO - implement Store.removeTaxCategory
-		throw new UnsupportedOperationException();
-	}
+    // Add and remove tax categories
+    public void addTaxCategory(TaxCategory taxCategory) {
+        if (taxCategory != null && !taxCategories.contains(taxCategory)) {
+            taxCategories.add(taxCategory);
+        }
+    }
 
-	/**
-	 * 
-	 * @param upc
-	 */
-	public void addUPC(uPC upc) {
-		// TODO - implement Store.addUPC
-		throw new UnsupportedOperationException();
-	}
+    public void removeTaxCategory(TaxCategory taxCategory) {
+        taxCategories.remove(taxCategory);
+    }
 
-	/**
-	 * 
-	 * @param upc
-	 */
-	public void removeUPC(uPC upc) {
-		// TODO - implement Store.removeUPC
-		throw new UnsupportedOperationException();
-	}
+    // Getters
+    public List<Item> getStoreItems() {
+        return storeItems;
+    }
 
-	/**
-	 * 
-	 * @param item
-	 */
-	public void removeItem(Item item) {
-		// TODO - implement Store.removeItem
-		throw new UnsupportedOperationException();
-	}
+    public String getStoreName() {
+        return storeName;
+    }
 
+    public int getStoreID() {
+        return storeID;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public int getZipCode() {
+        return zipCode;
+    }
 }
