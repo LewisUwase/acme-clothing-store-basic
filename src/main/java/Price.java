@@ -1,8 +1,11 @@
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
 public class Price {
 
 	private Item itemPrice;
 	private BigDecimal price;
-	private DATE effectiveDate;
+	private LocalDate effectiveDate;
 
 	public Price() {
 		// TODO - implement Price.Price

@@ -2,7 +2,8 @@
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
-
+import java.math.BigDecimal;
+import java.time.LocalDate;
 public class Order {
 
     private PersonAccount account;
@@ -10,7 +11,7 @@ public class Order {
     private Collection<OrderLineItem> orderLineItems;
     private Collection<Payment> payments;
     private Date createDate;
-    private boolean taxFree;
+    private Boolean taxFree;
 
     public Order(PersonAccount account, boolean taxFree) {
         this.account = account;
