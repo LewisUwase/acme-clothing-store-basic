@@ -22,3 +22,11 @@ jobs:
 
       - name: Build and test with Maven
         run: mvn -B clean test
+
+      - name: Test Summary
+        if: always()
+        run: |
+          echo "Tests completed!"
+          if [ -f target/surefire-reports/*.xml ]; then
+            echo "Test results available in Surefire reports"
+          fi

@@ -1,4 +1,3 @@
-package storefront;
 
 public class Item {
 

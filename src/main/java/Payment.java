@@ -1,4 +1,3 @@
-package storefront;
 
 import java.math.BigDecimal;
 
