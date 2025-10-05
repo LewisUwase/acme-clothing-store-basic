@@ -4,8 +4,8 @@ import java.time.LocalDate;
 public class Shipping {
 
 	private Order shipOrder;
-	private INT trackingNum;
-	private STRING status;
+	private int trackingNum;
+	private String status;
 
 	public void updateStatus() {
 		// TODO - implement Shipping.updateStatus

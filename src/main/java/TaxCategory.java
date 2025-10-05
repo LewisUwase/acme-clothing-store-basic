@@ -18,7 +18,7 @@ public class TaxCategory {
 	 * 
 	 * @param date
 	 */
-	public BigDecimal getTaxRateforDate(localDate date) {
+	public BigDecimal getTaxRateforDate(LocalDate date) {
 		// TODO - implement TaxCategory.getTaxRateforDate
 		throw new UnsupportedOperationException();
 	}

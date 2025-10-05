@@ -7,7 +7,7 @@ public class Promo {
 	private Collection<Store> promotions;
 	private Admin promo;
 	private int promoId;
-	private STRING discountType;
+	private String discountType;
 	private Date startDate;
 	private Date endDate;
 
