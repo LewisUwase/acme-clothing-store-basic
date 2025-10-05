@@ -1,24 +1,24 @@
+package storefront;
+
 public class OrderLineItem {
 
-	Order orderLine;
-	private Item itemOrder;
-	private int quantity;
-	private Order order;
-	private Item item;
+    private Item item;
+    private int quantity;
 
-	public void calculateTax() {
-		// TODO - implement OrderLineItem.calculateTax
-		throw new UnsupportedOperationException();
-	}
+    public OrderLineItem(Item item, int quantity) {
+        this.item = item;
+        this.quantity = quantity;
+    }
 
-	public void calculateSubTotal() {
-		// TODO - implement OrderLineItem.calculateSubTotal
-		throw new UnsupportedOperationException();
-	}
+    public double getTotalPrice() {
+        return item.getPrice() * quantity;
+    }
 
-	public OrderLineItem() {
-		// TODO - implement OrderLineItem.OrderLineItem
-		throw new UnsupportedOperationException();
-	}
+    public int getQuantity() {
+        return quantity;
+    }
 
+    public Item getItem() {
+        return item;
+    }
 }
